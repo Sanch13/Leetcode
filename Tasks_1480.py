@@ -27,3 +27,4 @@ obj = Solution()
 print(timeit('obj.runningSum([3, 1, 2, 10, 1])', globals=globals(), number=10000))  # 0.0107657
 print(timeit('obj.runningSum2([3, 1, 2, 10, 1])', globals=globals(), number=10000))  # 0.0046014
 print(timeit('obj.runningSum3([3, 1, 2, 10, 1])', globals=globals(), number=10000))  # 0.0026851
+
