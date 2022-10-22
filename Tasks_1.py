@@ -1,4 +1,4 @@
-import string
+from timeit import timeit
 
 """1. Two Sum
 Given an array of integers nums and an integer target, return indices of the two numbers such 
@@ -20,9 +20,14 @@ class Solution:
 
 
 obj = Solution()
-# print(obj.twoSum([2, 7, 11, 15], target=9))     # [0, 1]
-# print(obj.twoSum([3, 2, 4], target=6))          # [1, 2]
-# print(obj.twoSum([3, 1, 4, 2], target=6))       # [2, 3]
-# print(obj.twoSum([3, 2, 3], target=6))          # [0, 2]
-# print(obj.twoSum([2, 5, 5, 11], target=10))     # [1, 2]
+# print(timeit("obj.twoSum([2, 7, 11, 15], target=9)", globals=globals(), number=10000))    # [0, 1]
+# print(timeit("obj.twoSum([3, 2, 4], target=6)", globals=globals(), number=10000))          # [1, 2]
+# print(timeit("obj.twoSum([3, 1, 4, 2], target=6)", globals=globals(), number=10000))       # [2, 3]
+# print(timeit("obj.twoSum([3, 2, 3], target=6)", globals=globals(), number=10000))          # [0, 2]
+# print(timeit("obj.twoSum([2, 5, 5, 11], target=10)", globals=globals(), number=10000))     # [1, 2]
 
+# 0.004576
+# 0.006950499999999998
+# 0.0105023
+# 0.005176399999999998
+# 0.007557100000000004
