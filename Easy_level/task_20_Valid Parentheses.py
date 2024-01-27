@@ -25,17 +25,27 @@ s consists of parentheses only '()[]{}'.
 
 
 class Solution:
-    def isValid(self, s: str) -> bool:
+    def is_valid(self, s: str) -> bool:
         brackets = {
-            "(": 0,
-            "{": 0,
-            "[": 0,
-            ")": 0,
-            "}": 0,
-            "]": 0,
+            ")": "(",
+            "}": "{",
+            "]": "[",
         }
-        # '((())[]{})'
+
+        stack = list()
         for el in s:
-            brackets[el] += 1
+            if el in "({[":
+                stack.append(el)
+            elif not stack or stack.pop() != brackets[el]:
+                return False
+
+        return not stack
 
 
+s = '()[]{}'
+res = Solution()
+print(res.is_valid(s))
+
+assert res.is_valid("([)]") == False
+assert res.is_valid("(]") == False
+assert res.is_valid("()[]{}") == True
