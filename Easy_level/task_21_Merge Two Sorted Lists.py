@@ -28,9 +28,6 @@ class ListNode:
         self.next = next
 
 
-# list1 = [ListNode(1), ListNode(1), ListNode(2), ListNode(3), ]
-# list2 = [ListNode(0), ListNode(3), ListNode(4), ListNode(5), ]
-
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode],
                             list2: Optional[ListNode]) -> Optional[ListNode]:
